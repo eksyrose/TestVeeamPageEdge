@@ -1,6 +1,7 @@
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Edge;
+using OpenQA.Selenium.Support.UI;
 using System;
 
 
@@ -27,7 +28,7 @@ namespace TestVeeamPageEdge
         [TestCase("Research & Development", "English", 13)]
         public void CountRDEnglishJobs(string inputDepartment, string inputLanguage, int expectedJobsCount)
         {
-            _driver.Url = "https://cz.careers.veeam.com/vacancies";
+            _driver.Url = "https://cz.careers.veeam.com/vacancies";           
             CareersVeeamPage careersVeeamPage = new CareersVeeamPage(_driver); 
             careersVeeamPage.SelectDepartment(inputDepartment);
             careersVeeamPage.SelectLanguage(inputLanguage);
